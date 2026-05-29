@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Patience 💖</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    overflow:hidden;
+}
+
+/* =========================
+FIRST SCREEN
+========================= */
+
+#firstPage{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#ff5fa2,#ff8dc7,#ffd6e8);
+    position:relative;
+    overflow:hidden;
+}
+
+/* Floating Hearts */
+
+.heart{
+    position:absolute;
+    color:white;
+    font-size:24px;
+    animation:floatUp linear infinite;
+    opacity:0.8;
+}
+
+@keyframes floatUp{
+    0%{
+        transform:translateY(100vh) scale(0);
+        opacity:0;
+    }
+    20%{
+        opacity:1;
+    }
+    100%{
+        transform:translateY(-120vh) scale(1.8);
+        opacity:0;
+    }
+}
+
+/* Main Box */
+
+.container{
+    width:420px;
+    background:rgba(255,255,255,0.18);
+    backdrop-filter:blur(12px);
+    border:2px solid rgba(255,255,255,0.4);
+    border-radius:30px;
+    padding:40px;
+    text-align:center;
+    box-shadow:0 10px 40px rgba(0,0,0,0.25);
+    z-index:10;
+    animation:showCard 1s ease;
+}
+
+@keyframes showCard{
+    from{
+        transform:scale(0.5);
+        opacity:0;
+    }
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+h1{
+    color:white;
+    font-size:40px;
+    font-weight:900;
+    margin-bottom:20px;
+    text-shadow:0 0 20px rgba(255,255,255,0.7);
+}
+
+.question{
+    color:white;
+    font-size:24px;
+    font-weight:700;
+    line-height:1.6;
+    margin-bottom:50px;
+}
+
+/* Buttons */
+
+.buttons{
+    position:relative;
+    height:120px;
+}
+
+button{
+    border:none;
+    padding:16px 34px;
+    border-radius:50px;
+    font-size:22px;
+    font-weight:900;
+    cursor:pointer;
+    transition:0.3s;
+    position:absolute;
+}
+
+#yesBtn{
+    background:white;
+    color:#ff2d75;
+    left:50px;
+    box-shadow:0 10px 30px rgba(255,255,255,0.5);
+}
+
+#yesBtn:hover{
+    transform:scale(1.1);
+}
+
+#noBtn{
+    background:#ff2d75;
+    color:white;
+    right:50px;
+    box-shadow:0 10px 30px rgba(255,45,117,0.5);
+}
+
+/* =========================
+SECOND SCREEN
+========================= */
+
+#lovePage{
+    display:none;
+    height:100vh;
+    width:100%;
+    background:linear-gradient(135deg,#8b0000,#ff0000,#ff4d4d);
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    text-align:center;
+    padding:30px;
+    overflow:hidden;
+    position:relative;
+}
+
+/* Love Background Glow */
+
+.glow{
+    position:absolute;
+    width:400px;
+    height:400px;
+    background:rgba(255,255,255,0.1);
+    border-radius:50%;
+    filter:blur(80px);
+    animation:pulse 3s infinite alternate;
+}
+
+@keyframes pulse{
+    from{
+        transform:scale(1);
+    }
+    to{
+        transform:scale(1.3);
+    }
+}
+
+/* Love Letter Box */
+
+.loveLetter{
+    max-width:850px;
+    background:rgba(255,255,255,0.12);
+    border:3px solid rgba(255,255,255,0.3);
+    backdrop-filter:blur(8px);
+    border-radius:30px;
+    padding:40px;
+    z-index:10;
+    box-shadow:0 10px 40px rgba(0,0,0,0.4);
+    animation:fadeIn 1s ease;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.loveTitle{
+    color:white;
+    font-size:50px;
+    font-weight:900;
+    margin-bottom:25px;
+    text-shadow:0 0 20px rgba(255,255,255,0.7);
+}
+
+#typedText{
+    color:white;
+    font-size:24px;
+    line-height:2;
+    font-weight:800;
+    white-space:pre-wrap;
+    text-shadow:0 0 10px rgba(0,0,0,0.3);
+}
+
+.signature{
+    margin-top:30px;
+    color:white;
+    font-size:32px;
+    font-weight:900;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- FIRST PAGE -->
+
+<div id="firstPage">
+
+    <div class="container">
+
+        <h1>💖 My Baby Patience 💖</h1>
+
+        <div class="question">
+            Do you love me genuinely? 🥺💕
+        </div>
+
+        <div class="buttons">
+            <button id="yesBtn">YES 😍</button>
+            <button id="noBtn">NO 😭</button>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- SECOND PAGE -->
+
+<div id="lovePage">
+
+    <div class="glow"></div>
+
+    <div class="loveLetter">
+
+        <div class="loveTitle">
+            💌 FOR MY PATIENCE 💌
+        </div>
+
+        <div id="typedText"></div>
+
+        <div class="signature">
+            — Chris 💖
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+const noBtn = document.getElementById("noBtn");
+const yesBtn = document.getElementById("yesBtn");
+
+const firstPage = document.getElementById("firstPage");
+const lovePage = document.getElementById("lovePage");
+
+const typedText = document.getElementById("typedText");
+
+/* NO BUTTON JUMPING */
+
+function moveButton(){
+
+    const container = document.querySelector(".container");
+
+    const maxX = container.clientWidth - noBtn.offsetWidth - 20;
+    const maxY = 200;
+
+    const randomX = Math.floor(Math.random() * maxX);
+    const randomY = Math.floor(Math.random() * maxY);
+
+    noBtn.style.left = randomX + "px";
+    noBtn.style.top = randomY + "px";
+}
+
+noBtn.addEventListener("mouseover", moveButton);
+noBtn.addEventListener("click", moveButton);
+
+/* LOVE LETTER */
+
+const message = `
+My Beautiful Patience 💖,
+
+I Chris, as your boyfriend, will definitely do anything to make you happy.
+
+You are one of the most precious people in my life and every moment with you feels special.
+
+Your smile gives me peace.
+Your voice makes my day better.
+Your happiness means everything to me. 💕
+
+I promise to always care for you, support you, protect your heart, and love you genuinely.
+
+No matter what happens, I will always choose you again and again. 😭💖
+
+Thank you for being my baby.
+Thank you for making my world beautiful.
+
+And yes…
+WE ARE DEFINITELY GOING ON A DATE 😍✨
+`;
+
+yesBtn.addEventListener("click", () => {
+
+    /* Switch Pages */
+
+    firstPage.style.display = "none";
+    lovePage.style.display = "flex";
+
+    typedText.innerHTML = "";
+
+    let index = 0;
+
+    const typing = setInterval(() => {
+
+        typedText.innerHTML += message.charAt(index);
+
+        index++;
+
+        if(index >= message.length){
+            clearInterval(typing);
+        }
+
+    }, 35);
+
+    /* Auto Clear After 1 Minute */
+
+    setTimeout(() => {
+
+        typedText.innerHTML = `
+        💖 I LOVE YOU PATIENCE 💖
+        `;
+
+    }, 60000);
+
+});
+
+/* Floating Hearts */
+
+function createHeart(){
+
+    const heart = document.createElement("div");
+
+    heart.classList.add("heart");
+
+    heart.innerHTML = "💖";
+
+    heart.style.left = Math.random() * 100 + "vw";
+
+    heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 6000);
+}
+
+setInterval(createHeart, 250);
+
+</script>
+
+</body>
+</html>
